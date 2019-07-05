@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 2019_07_05_141726) do
 
   create_table "answers", force: :cascade do |t|
     t.string "value"
-    t.string "type"
-    t.bigint "quiz_id"
+    t.string "question_type"
+    t.bigint "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["quiz_id"], name: "index_answers_on_quiz_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 2019_07_05_141726) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "q"
-    t.string "type"
+    t.string "value"
     t.bigint "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_07_05_141726) do
   end
 
   create_table "quizzes", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
