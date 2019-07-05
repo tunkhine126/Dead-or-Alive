@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create({username: "Kesha", password: "password", img_ur: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg" zombie: false})
+user1 = User.create({username: "Kesha", password: "password", img_url: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg", zombie: false})
 
 q1 = Question.create({value: "What makes a person sexy?"})
 q2 = Question.create({value: "Would you run a 5k marathon?"})
