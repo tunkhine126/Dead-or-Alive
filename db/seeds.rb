@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-user1 = User.create({username: "Kesha", password: "password", img_url: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg", zombie: false})
+l1 = Location.create({name: "Atlanta"})
 
 quiz = Quiz.create({name: "Are You a Dead or Alive?"})
+
+user1 = User.create({username: "Kesha", password: "password", img_url: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg", zombie: false, location_id: l1.id, quiz_id: quiz.id})
 
 q1 = Question.create({value: "What makes a person sexy?", quiz_id: quiz.id})
 q2 = Question.create({value: "Would you run a 5k marathon?", quiz_id: quiz.id})

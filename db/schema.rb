@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2019_07_05_141726) do
     t.string "password_digest"
     t.string "img_url"
     t.boolean "zombie"
+    t.integer "quiz_id"
+    t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
