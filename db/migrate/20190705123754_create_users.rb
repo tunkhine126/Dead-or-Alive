@@ -5,7 +5,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :img_url
       t.boolean :zombie
-
+      t.integer :quiz_id
+      t.integer :location_id
       t.timestamps
     end
   end
