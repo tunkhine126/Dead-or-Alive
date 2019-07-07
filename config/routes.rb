@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :comments
   resources :posts
   resources :answers
@@ -8,10 +9,10 @@ Rails.application.routes.draw do
   resources :quizzes
   
   get '/profile/:id', to: 'users#profile'
-
+  
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create]
+      resources :users, only: [:create, :index, :delete]
       post '/login', to: 'auth#create'
     end
   end
