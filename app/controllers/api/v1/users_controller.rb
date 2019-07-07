@@ -1,10 +1,15 @@
 class Apil::V1::UsersController < ApplicationController
   skip_before_action :authorized, only: [:create]
 
+  def index
+    @users = User.all
+  end
+
+
   def profile
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
-
+  
 
   def create
     @user = User.create(user_params)
@@ -15,6 +20,11 @@ class Apil::V1::UsersController < ApplicationController
       render json: { error: @user.errors.full_messages }, status: not_acceptable
       #error: 'failed to create user'
     end
+  end
+
+  def delete
+    @user = User.find_by(params[:id])
+    @user.destroy
   end
 
   private
