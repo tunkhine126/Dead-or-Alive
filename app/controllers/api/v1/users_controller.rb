@@ -45,7 +45,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :img_url, :zombie, :location_id, :quiz_id, :id)
+    params.require(:user).permit(:username, :password, :img_url, :zombie, :location_id, :id)
   end
 
 end
@@ -60,7 +60,6 @@ end
   #       username: @user.username,
   #       img_url: @user.img_url,
   #       zombie: @user.zombie,
-  #       quiz_id: @user.quiz_id,
   #       location_id: @user.location_id
   #     }
   #   else

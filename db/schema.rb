@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_193610) do
+ActiveRecord::Schema.define(version: 2019_07_10_001401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,14 +47,6 @@ ActiveRecord::Schema.define(version: 2019_07_05_193610) do
 
   create_table "questions", force: :cascade do |t|
     t.string "value"
-    t.bigint "quiz_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
-  end
-
-  create_table "quizzes", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,7 +56,6 @@ ActiveRecord::Schema.define(version: 2019_07_05_193610) do
     t.string "password_digest"
     t.string "img_url"
     t.boolean "zombie"
-    t.integer "quiz_id"
     t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

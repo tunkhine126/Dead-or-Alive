@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :answers, only: [:index]
   resources :questions, only: [:index]
   resources :locations, only: [:index, :create, :update]
-  resources :quizzes, only: [:index]
+  # resources :quizzes, only: [:index]
 
   namespace :api do
     namespace :v1 do

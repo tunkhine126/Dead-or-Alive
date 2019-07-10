@@ -11,20 +11,19 @@ Post.destroy_all
 
 l1 = Location.create({name: "Atlanta"})
 
-quiz = Quiz.create({name: "Are You a Dead or Alive?"})
 
-user1 = User.create({username: "Kesha", password: "password", img_url: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg", zombie: true, location_id: l1.id, quiz_id: quiz.id})
-user2 = User.create({username: "Paula", password: "password", img_url: "your image here", zombie: true, location_id: l1.id, quiz_id: quiz.id})
-user3 = User.create({username: "Tun", password: "password", img_url: "your image here", zombie: false, location_id: l1.id, quiz_id: quiz.id})
+user1 = User.create({username: "Kesha", password: "password", img_url: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg", zombie: true, location_id: l1.id})
+user2 = User.create({username: "Paula", password: "password", img_url: "your image here", zombie: true, location_id: l1.id})
+user3 = User.create({username: "Tun", password: "password", img_url: "your image here", zombie: false, location_id: l1.id})
 
-q1 = Question.create({value: "What makes a person sexy?", quiz_id: quiz.id})
-q2 = Question.create({value: "Would you run a 5k marathon?", quiz_id: quiz.id})
-q3 = Question.create({value: "Are you hungry? If so, for what?", quiz_id: quiz.id})
-q4 = Question.create({value: "How is your relationship with your mom?", quiz_id: quiz.id})
-q5 = Question.create({value: "Are you well-rested?", quiz_id: quiz.id})
-q6 = Question.create({value: "Which best describes your complexion?", quiz_id: quiz.id})
-q7 = Question.create({value: "Which best describes your walk?", quiz_id: quiz.id})
-q8 = Question.create({value: "Which best describes your communication skills?", quiz_id: quiz.id})
+q1 = Question.create({value: "What makes a person sexy?"})
+q2 = Question.create({value: "Would you run a 5k marathon?"})
+q3 = Question.create({value: "Are you hungry? If so, for what?"})
+q4 = Question.create({value: "How is your relationship with your mom?"})
+q5 = Question.create({value: "Are you well-rested?"})
+q6 = Question.create({value: "Which best describes your complexion?"})
+q7 = Question.create({value: "Which best describes your walk?"})
+q8 = Question.create({value: "Which best describes your communication skills?"})
 
 a1 = Answer.create({value: "their brain", question_type: "zombie", question_id: q1.id})
 a2 = Answer.create({value: "their face", question_type: "human", question_id: q1.id})
