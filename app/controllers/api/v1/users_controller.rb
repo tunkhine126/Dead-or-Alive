@@ -31,6 +31,16 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def update
+  # byebug
+    @user = User.find(params[:id])
+    if @user.update(zombie: user_params[:zombie])
+      render json: @user
+    else
+      render json: {error: @user.errors.full_messages}
+    end
+  end
+
   def delete
     @user = User.find_by(params[:id])
     @user.destroy
@@ -39,7 +49,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :img_url, :zombie)
+    params.require(:user).permit(:username, :password, :img_url, :zombie, :location_id, :id)
   end
 
 end
@@ -54,7 +64,6 @@ end
   #       username: @user.username,
   #       img_url: @user.img_url,
   #       zombie: @user.zombie,
-  #       quiz_id: @user.quiz_id,
   #       location_id: @user.location_id
   #     }
   #   else
