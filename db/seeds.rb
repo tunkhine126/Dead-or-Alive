@@ -12,9 +12,9 @@ Post.destroy_all
 l1 = Location.create({name: "Atlanta"})
 
 
-user1 = User.create({username: "Kesha", password: "password", img_url: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg", zombie: true, location_id: l1.id, quiz_id: quiz.id})
-user2 = User.create({username: "Paula", password: "password", zombie: true, location_id: l1.id, quiz_id: quiz.id})
-user3 = User.create({username: "Tun", password: "password", zombie: false, location_id: l1.id, quiz_id: quiz.id})
+user1 = User.create({username: "Kesha", password: "password", img_url: "https://pbs.twimg.com/profile_images/714265217727901696/d8qm1F9d_400x400.jpg", zombie: true, location_id: l1.id})
+user2 = User.create({username: "Paula", password: "password", zombie: true, location_id: l1.id})
+user3 = User.create({username: "Tun", password: "password", zombie: false, location_id: l1.id})
 
 
 q1 = Question.create({value: "What makes a person sexy?"})
